@@ -22,7 +22,7 @@ const ProgramsPage = () => {
   });
 
   const deleteProgram = useDeleteProgram();
-  const { data } = usePrograms();
+  const { data, isSuccess } = usePrograms();
 
   const admin = authCtx.isAdmin;
 
@@ -30,7 +30,7 @@ const ProgramsPage = () => {
     // console.log(
     //   `Delete program ${programDetails.title} with ID: ${programDetails.id}`
     // );
-    deleteProgram(programDetails.id)
+    deleteProgram(programDetails.id);
     setDeleteProgramIsShown(false);
   };
 
@@ -52,11 +52,11 @@ const ProgramsPage = () => {
           onDelete={deleteProgramHandler}
         />
       )}
-      {!admin && <Banner title={t("programs_page_our_programs")}/>}
+      {!admin && <Banner title={t("programs_page_our_programs")} />}
       {admin && <AdminBanner programs={true} />}
       <div className={classes.gridContainer}>
         <div className={classes.programCardGrid}>
-          {admin && <AddProgramCard/>}
+          {admin && isSuccess && <AddProgramCard />}
           {data.map((program) => {
             return (
               <ProgramCard

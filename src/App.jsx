@@ -20,13 +20,14 @@ const RewardsPage = React.lazy(() => import("./Pages/RewardPages/RewardsPage"));
 const MembersPage = React.lazy(() => import("./Pages/MemberPages/MembersPage"));
 const MemberPage = React.lazy(() => import("./Pages/MemberPages/MemberPage"));
 const UpdateProfilePage = React.lazy(() => import("./Pages/ProfilePages/UpdateProfilePage"));
-const AddProgramPage = React.lazy(() => import("./Pages/AdminFormPages/AddProgramPage"));
+// const AddProgramPage = React.lazy(() => import("./Pages/AdminFormPages/AddProgramPage"));
 const LibraryItemsPage = React.lazy(() => import("./Pages/LibraryPages/LibraryItemsPage"));
 const LibraryItemPage = React.lazy(() => import("./Pages/LibraryPages/LibraryItemPage"));
 const NotFoundPage = React.lazy(() => import("./Pages/ErrorPages/NotFoundPage"));
 const PurchasePage = React.lazy(() => import("./Pages/ProgramPages/PurchasePage"));
 const AddWorkoutPage = React.lazy(() => import("./Pages/AdminFormPages/AddWorkout"));
-const FinishedPage = React.lazy(() => import("./Pages/WorkoutPages/FinishedPage"))
+const FinishedPage = React.lazy(() => import("./Pages/WorkoutPages/FinishedPage"));
+const ProgramCreate = React.lazy(() => import("./Pages/ProgramPages/ProgramCreate"));
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -89,7 +90,7 @@ function App() {
                 path="programs/:programId/purchase"
                 element={<PurchasePage />}
               />
-              <Route path="programs/add-program" element={<AddProgramPage />} />
+              <Route path="programs/add-program" element={<ProgramCreate />} />
               <Route
                 path="programs/add-program/add-workout"
                 element={<AddWorkoutPage />}

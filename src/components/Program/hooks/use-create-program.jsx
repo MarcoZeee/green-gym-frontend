@@ -10,8 +10,8 @@ import { baseUrl } from "../../../axiosInstance/constants";
 const createProgram = async (program, bearerToken) => {
   await axios.post(`${baseUrl}/programs`, program, {
     headers: {
-      Authorization: bearerToken
-    }
+      Authorization: bearerToken,
+    },
   });
 };
 
@@ -22,16 +22,19 @@ export const useCreateProgram = () => {
   const { addError } = useAPIError();
   // const fallback = [];
   const queryClient = useQueryClient();
-  const { mutate } = useMutation((program) => createProgram(program, bearerToken), {
-    onSuccess: () => {
-      queryClient.invalidateQueries([queryKeys.programs]);
-    },
-    onError: (error) => {
-      const title =
-        error instanceof Error ? error.message : "error connecting to server";
-      addError(title, error.status);
-    },
-  });
+  const { mutate, isError, isLoading } = useMutation(
+    (program) => createProgram(program, bearerToken),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries([queryKeys.programs]);
+      },
+      onError: (error) => {
+        const title =
+          error instanceof Error ? error.message : "error connecting to server";
+        addError(title, error.status);
+      },
+    }
+  );
 
-  return mutate;
+  return { mutate, isError, isLoading };
 };

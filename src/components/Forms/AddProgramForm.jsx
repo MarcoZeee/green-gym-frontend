@@ -8,7 +8,7 @@ import Button from "../UI/Button";
 import useInput from "./Hooks/use-input";
 
 const AddProgramForm = () => {
-  const createProgram = useCreateProgram();
+  const {mutate: createProgram} = useCreateProgram();
 
   // Set up a navigate to change routes on form submittion
   const navigate = useNavigate();

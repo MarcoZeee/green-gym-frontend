@@ -1,5 +1,12 @@
+.main_container {
+  display: grid;
+  place-items: center;
+  padding-bottom: 15%;
+}
+
 .container {
-  margin: 0 10rem 10rem 10rem;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
 }
 
 .descriptionContainer {
@@ -36,23 +43,41 @@
 
 .descriptionContainer img {
   max-width: 48rem;
+  width: 100vw;
   grid-area: pic;
 }
 
 
 /* this isn't doing anything */
-.programWorkoutsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+.program_img {
+  cursor: wait;
+}
+.program_img > input {
+  display: none;
+}
+
+#program_title {
+  margin: 0;
+  padding: 1rem 1rem 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+#program_info {
+  margin: 0;
+  padding: 0 1rem 1rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
 }
 
 .workoutCard {
-  width: 21rem;
+  width: 100%;
 }
 
 .purchaseContainer {
-  margin: 3rem 0 0 0;
+  margin: 9rem;
   display: flex;
   justify-content: center;
 }
@@ -61,7 +86,7 @@
   margin: 1rem 1rem 0 0;
 }
 
-.purchaseContainer a{
+.purchaseContainer> button{
   margin-bottom: 10rem;
 }
 
@@ -70,6 +95,16 @@
   display: flex;
   justify-content: left;
 }
+#number_input {
+  margin: 0;
+  padding: 0 1rem 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000;
+  width: 100%;
+}
+
+
 
 @media only screen and (min-width: 320px) and (max-width: 617px) {
 
@@ -157,7 +192,7 @@
     font-weight: bold;
 }
 
-.purchaseContainer a {
+.create_button {
   margin-bottom: 10rem;
 }
 }

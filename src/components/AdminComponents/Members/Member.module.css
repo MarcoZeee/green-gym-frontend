@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.column{
+.column {
   width: 20%;
 }
 
@@ -40,41 +40,44 @@
 }
 
 @media only screen and (min-width: 618px) and (max-width: 1200px) {
-  .email{
+  .email {
     word-break: break-all;
   }
 
-  .card{
+  .card {
     position: relative;
     padding: 0 1rem 0 1rem;
     margin: 0 0 1rem 0;
     cursor: pointer;
     width: 39rem;
+  }
 }
-}
-
 
 @media only screen and (min-width: 320px) and (max-width: 617px) {
-  .last_name{
+  .last_name {
     display: none;
   }
 
-  .email{
+  .email {
     display: none;
   }
 
-    .linkContainer {
-      display: flex;
-      margin: 0 auto;
-    }
+  .number {
+    display: none;
+  }
 
-    .card {
-  position: relative;
-  padding: 0 1rem 0 1rem;
-  margin: 0 1rem 1rem 1rem;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  cursor: pointer;
-}
+  .linkContainer {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .card {
+    position: relative;
+    padding: 0 1rem 0 1rem;
+    margin: 0 1rem 1rem 1rem;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    cursor: pointer;
+  }
 }

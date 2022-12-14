@@ -120,7 +120,7 @@ const AddExerciseForm = ({ exerciseNumber, getExerciseData }) => {
       );
     });
 
-  const libraryItemOptions = libraryData.map((libraryItem) => {
+  const libraryItemOptions = libraryData?.map((libraryItem) => {
     return (
       <option
         key={libraryItem.id}

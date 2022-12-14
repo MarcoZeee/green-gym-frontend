@@ -1,7 +1,20 @@
 .container {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 1rem 0;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.tags {
+  display: inline-flex;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  
+}
+
+.tag {
+  border: 0.2rem solid rgb(49, 164, 49);
+  width: fit-content;
+  font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 700px) {

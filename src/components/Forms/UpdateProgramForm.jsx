@@ -9,8 +9,6 @@ const UpdateProgramForm = ({ programData, onClose }) => {
   const updateProgram = useUpdateProgram();
 
 
-  // const createProgram = useCreateProgram();
-
   const formSubmitHandler = (event) => {
     event.preventDefault();
 

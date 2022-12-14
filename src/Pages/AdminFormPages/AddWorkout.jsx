@@ -30,7 +30,7 @@ const AddWorkoutPage = () => {
     }
   }, [renderForms, navigate])
 
-  const addWorkoutForms = numberOfWorkoutsArray.map((num) => {
+  const addWorkoutForms = numberOfWorkoutsArray?.map((num) => {
     if (currentArrayIndex === num) {
       return (
         <div key={num} className={classes.singleFormContainer}>
